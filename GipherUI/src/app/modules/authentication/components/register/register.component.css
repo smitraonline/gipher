@@ -1,0 +1,101 @@
+mat-card-header {
+    padding-top: 3vh;
+    flex-direction: column;
+}
+mat-card-title {
+    color: #235799;
+    font-size: 1.2em;
+    font-family: 'EB Garamond&', sans-serif;
+}
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 40vh;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10vh;
+}
+
+.my-form {
+    display: flex;
+    flex-direction: column;
+    width: 20vh;
+    margin: auto;
+}
+
+mat-icon {
+    padding-right: 10px
+}
+
+@media(max-width: 575px) {
+    mat-card {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        margin: auto;
+    }
+}
+@media(min-width: 576px) {
+    mat-card {
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        width: 40vh;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+/* mat-card {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 40vh;
+    text-align: center;
+    background-color: #424242;
+    margin: auto;
+    margin-bottom: 10vh;
+}
+
+mat-card-header {
+    color: #fff;
+    font-size: 1.2em;
+    font-family: 'Acme', sans-serif;
+    padding-left: 5vw;
+    padding-top: 3vh;
+}
+
+.my-form {
+    display: flex;
+    flex-direction: column;
+    width: 20vh;
+    margin: auto;
+}
+
+.label {
+    color: #fff;
+    font-size: 1.2em;
+    font-family: 'Acme', sans-serif;
+}
+
+mat-icon {
+    margin-right: 1em;
+    color: #9c1148;
+}
+
+.matInputdata {
+    color: #fff;
+    font-size: 1.2em;
+    font-family: 'Acme', sans-serif;
+}
+
+.mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button {
+    color: #fff;
+    background-color: #9c1148;
+    font-size: 1.2em;
+    font-family: 'Acme', sans-serif;
+} */

@@ -1,0 +1,38 @@
+
+<div class="history-container">
+  <!-- <div *ngFor = 'let searches of historical.entries()'>{{searches[0]}}
+    <mat-card *ngFor = 'let search of searches[1]'>
+      {{search.keyword}}
+      <a mat-flat-button matToolTip="Open" (click)="deleteSearch(search)" class="save-search">
+        <mat-icon aria-label="delete icon-button with a delete icon" color="primary">delete</mat-icon>
+      </a>
+    </mat-card>
+  </div> -->
+  
+  <section class="autosave-section">
+    <h1 style="flex-basis: 50px" class="mat-display-1">History</h1>
+    <div style="flex:1">&nbsp;</div>
+    <mat-slide-toggle style="flex-basis: 50px"
+        class="autosave-slider"
+        [checked]="checked"
+        [(ngModel)] = "checked"
+        (change)="toggleAutoSave()">
+      AUTOSAVE
+    </mat-slide-toggle>
+  </section>
+  
+  <mat-card *ngFor = 'let search of searches'  class="history-section">
+    <div style="flex-basis:20vw">{{search.logtime}}</div>
+    &nbsp;
+    &nbsp;
+    <div style="flex-basis:50vw; text-align: justify; padding-left: 5px">{{search.keyword}}</div>
+    &nbsp;
+    <a mat-flat-button matToolTip="Open" matToolTip="Open" [routerLink]="['/explore']" [queryParams]="{q: search.keyword }" class="action-button">
+        <mat-icon aria-label="open icon-button with a opne icon">open_in_new</mat-icon>
+    </a>
+    &nbsp;
+    <a mat-flat-button matToolTip="Delete" (click)="deleteSearch(search)" class="action-button">
+      <mat-icon aria-label="delete icon-button with a delete icon" color="primary">delete</mat-icon>
+    </a>
+  </mat-card>
+</div>

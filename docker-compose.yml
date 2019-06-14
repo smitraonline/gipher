@@ -1,0 +1,105 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.5
+    ports:
+      - "3306:3306"
+    container_name: mysql_container
+    network_mode: host
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: userdb
+      MYSQL_USER: approot
+      MYSQL_PASSWORD: root123
+    healthcheck:
+      test: "exit 0"
+  
+  mongo:
+    image: mongo:3.2-jessie
+    ports:
+      - "27017:27017"
+    container_name: mongo_container
+    network_mode: host
+    healthcheck:
+      test: "exit 0"
+  
+  eurekaServer:
+    image: smitraonline/eurekaservice
+    restart: always
+    network_mode: host
+    container_name: eureka_container
+    ports:
+      - 9090:9090
+    healthcheck:
+      test: "exit 0"
+  
+  zuulService:
+    image: smitraonline/zuulservice
+    restart: always
+    network_mode: host
+    container_name: zuul_container
+    ports:
+      - 9080:9080
+    healthcheck:
+      test: "exit 0"
+  
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq_container
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: "exit 0"
+  
+  accountmanagerservice:
+    image: smitraonline/gipheraccountmanagerservice:v1
+    restart: always
+    network_mode: host
+    container_name: accountmanager_container
+    depends_on:
+      - mysql
+      - eurekaServer
+      - rabbitmq
+    ports:
+      - 9091:9091
+    healthcheck:
+      test: "exit 0"
+  
+  giphermanagerservice:
+    image: smitraonline/giphermanagerservice:v2
+    restart: always
+    network_mode: host
+    container_name: giphermanager_container
+    depends_on:
+      - mongo
+      - eurekaServer
+      - rabbitmq
+    ports:
+      - 9092:9092
+    healthcheck:
+      test: "exit 0"
+  
+  gipherrecommenderservice:
+    image: smitraonline/gipherrecommenderservice:v1
+    restart: always
+    network_mode: host
+    container_name: gipherrecommender_container
+    depends_on:
+      - mongo
+      - eurekaServer
+      - rabbitmq
+      - giphermanagerservice
+    ports:
+      - 9093:9093
+    healthcheck:
+      test: "exit 0"
+  
+  gipherui:
+    image: smitraonline/gipherui:v1
+    network_mode: host
+    container_name: gipherui_container
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: "exit 0"

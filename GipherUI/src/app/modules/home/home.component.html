@@ -1,0 +1,17 @@
+
+  <div class="home-content">
+    <div class="home-message">
+      <h1 style="font-size: 3em">
+        Express Yourself :)
+      </h1>
+      <div class="home-message-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, dolorem?
+      In voluptatum aliquid quia libero nemo consectetur sunt blanditiis ab culpa ea animi,
+      repellendus perspiciatis ducimus! Magnam, dolorum. Eum, illum...</div>
+    </div>
+    <app-login *ngIf="!verified"></app-login>
+  </div>
+  
+  <div *ngIf="verified" class="trending">
+    <h1 class="mat-display-1">Trending Now</h1>
+    <app-card-container></app-card-container>
+  </div>

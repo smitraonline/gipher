@@ -1,0 +1,14 @@
+<h1 style="flex-basis: 50px" class="mat-display-1">Bookmarks</h1>
+<!-- <mat-form-field color="primary" appearance="outline">
+  <mat-label class="label">Search Gif</mat-label>
+  <input (keyup)="onKey($event)" matInput class="input">
+  <mat-icon matSuffix><i class="material-icons">search</i></mat-icon>
+</mat-form-field> &nbsp; -->
+
+<div class="gif-container">
+  <app-card *ngFor = 'let gif of gifs' 
+    [gif] = gif
+    [favourite] = 'favourite'
+    (deleteFromFavourite)='deleteFromWishList($event)'
+  ></app-card>
+</div>

@@ -1,0 +1,53 @@
+<mat-card class="gif-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <!-- <mat-card-title>{{gif.title}}</mat-card-title> -->
+      <mat-card-subtitle>{{gif.title}}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image class="gif-image" [src]='gif.rendition.fixed_width_small_still.url' alt="gif.title"> -->
+    <img mat-card-image class="gif-image" [src]='gif.rendition.fixed_width_downsampled.url' alt="{{gif.title}}">
+    <!-- <mat-card-content>
+        <p>{{gif.title}}</p>
+    </mat-card-content> -->
+    <mat-card-actions>
+      <button *ngIf="!favourite" mat-mini-fab class="mat-fab add-favorite" matToolTip="Add to favorite" (click)="addButtonClick(gif)">
+          <mat-icon aria-label="favorite icon-button with a heart icon">favorite</mat-icon>
+      </button>
+      <button *ngIf="favourite" mat-mini-fab class="mat-fab delete-favorite" matToolTip="Delete from favorite" (click)="deleteButtonClick(gif)">
+          <mat-icon aria-label="delete icon-button with a heart icon">delete</mat-icon>
+      </button>
+      &nbsp;
+      <a mat-mini-fab class="mat-fab" matToolTip="Open" [href]="gif.bitly_url">
+          <mat-icon aria-label="open icon-button with a opne icon">open_in_new</mat-icon>
+      </a>
+    </mat-card-actions>
+    <!-- <mat-card-actions class="button">
+  
+      <button class="addbutton" *ngIf="!wishData" mat-mini-fab matToolTip="Add to WishList" (click)="addButtonClick(track)">
+        <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+      </button>
+      <button class="deletebutton" *ngIf="wishData" mat-mini-fab matToolTip="Delete from WishList" (click)="deleteButtonClick(track)">
+        <mat-icon aria-label="Example icon-button with a heart icon">delete</mat-icon>
+      </button>
+  
+      <button mat-mini-fab class="mat-fab" matToolTip="Play">
+        <mat-icon>
+          <a [href]="track.url">
+            <i class="material-icons">play_circle_filled_white</i>
+          </a>
+        </mat-icon>
+      </button>
+  
+      <button *ngIf="wishData" 
+        mat-mini-fab 
+        class="updatebutton" 
+        (click)="addComments()"
+        matToolTip="Update comments">
+        <mat-icon>
+          <i class="material-icons">create</i>
+        </mat-icon>
+      </button>
+      
+  
+    </mat-card-actions> -->
+    </mat-card>

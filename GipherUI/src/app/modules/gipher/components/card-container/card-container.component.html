@@ -1,0 +1,30 @@
+
+<!-- <mat-form-field class="field" appearance="outline">
+  <mat-label class="label">Search Artist</mat-label>
+  <input (keyup)="onKey($event)" matInput class="input">
+  <mat-icon matSuffix><i class="material-icons">search</i></mat-icon>
+</mat-form-field> -->
+
+<div class="search-area">
+<mat-form-field color="primary" appearance="outline">
+  <mat-label class="label">Search Animation</mat-label>
+  <input [(ngModel)]="searchKey" (keyup)="onKey($event)" matInput class="input">
+  <mat-icon matSuffix><i class="material-icons">search</i></mat-icon>
+</mat-form-field>
+&nbsp;
+<a *ngIf = '!autosave' mat-flat-button matToolTip="Open" (click)="saveSearch()" class="save-search">
+  <mat-icon aria-label="save icon-button with a save icon" color="primary">save</mat-icon>
+</a>
+</div>
+
+<div class="gif-container">
+  <app-card *ngFor = 'let gif of gifs; let last = last' [hidden]="last"
+    [gif]=gif (addToFavourite)=addToFavourite($event)></app-card>
+
+  <mat-card class="gif-card" *ngIf = 'gifs.length' (click)="showMore()">
+    <mat-card-content class="more">
+        <i class="material-icons" style="width:100%; font-size: 30pt">add_circle</i>
+        More
+    </mat-card-content>
+  </mat-card>
+</div>

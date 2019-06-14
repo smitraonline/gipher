@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+/*@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";*/
+/*@import "~@angular/material/prebuilt-themes/purple-green.css";*/
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
+
+/*html, body { height: 100%; width: 100vw; overflow-x: hidden}
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    columns: #9c1148;
+}*/
+
+.color-primary-0 { color: #5B89C4 }	/* Main Primary color */
+.color-primary-1 { color: #B4CEEF }
+.color-primary-2 { color: #83A9DB }
+.color-primary-3 { color: #3D6CAA }
+.color-primary-4 { color: #235799 }
+
+.bg-primary-0 { background-color: #5B89C4 }	/* Main Primary color */
+.bg-primary-1 { background-color: #B4CEEF }
+.bg-primary-2 { background-color: #83A9DB }
+.bg-primary-3 { background-color: #3D6CAA }
+.bg-primary-4 { background-color: #235799 }
+
+.default-font {
+    font-family: 'EB Garamond', serif;
+    font-family: 'Oswald', sans-serif;
+}

@@ -1,0 +1,28 @@
+.autosave-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex: 1;
+    justify-content: right;
+    align-items: flex-start;
+    padding: 30px;
+    margin: 10px;
+}
+.autosave-slider {
+    font-size: 10pt;
+}
+
+.history-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding: 30px;
+    margin-top: 10px;
+    margin: 10px;
+}
+
+.action-button:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,52 @@
+hi {
+    flex: 1;
+}
+
+.content {
+    flex: 1;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10vh;
+    padding-right: 10vh; 
+}
+
+.home-message {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    font-size: 20pt;
+    height: 70vh;
+    /* width: 70vh; */
+    font-family: 'EB Garamond', serif;
+    /* font-family: 'Oswald', sans-serif; */
+    background-image: url("../../../assets/images/smilies.jpg");
+    background-repeat: no-repeat;
+    /* background-blend-mode: screen; */
+    background: linear-gradient(#fff, #fefefe, transparent), url("../../../assets/images/smilies.jpg") no-repeat center;
+}
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10vh;
+    padding-right: 10vh; 
+}
+
+@media(max-width: 575px) {
+    .home-message {
+        display: none;
+    }
+}
+@media(min-width: 576px) and (max-width: 1000px) {
+    .home-message-content {
+        display: none;
+    }
+}

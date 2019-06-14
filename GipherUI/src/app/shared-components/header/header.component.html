@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <img class="logo" src="assets/images/logo.png" alt="logo">
+      <span class="app-title" [routerLink]="['/home']">Gipher</span>
+      <span>
+          <button id="menu_explore" class="mat-button" mat-flat-button color="primary" [matMenuTriggerFor]="explore_menu">
+            <i class="material-icons" style="vertical-align: middle">explore</i> Explore
+            <i class="material-icons" style="vertical-align: middle">arrow_drop_down</i>
+          </button> &nbsp;
+          <mat-menu #explore_menu="matMenu">
+            <button id="menu_trending" class="mat-menu-item" mat-menu-item [routerLink]="['/explore']">
+              <i class="material-icons" style="vertical-align: middle">trending_up</i> Trending
+            </button>
+            <button id="menu_recommended" class="mat-menu-item" mat-menu-item [routerLink]="['/recommendations']">
+              <i class="material-icons" style="vertical-align: middle">check_circle_outline</i> Recommended
+            </button>
+            <button id="menu_bookmarked" class="mat-menu-item" mat-menu-item [routerLink]="['/favourite']">
+              <i class="material-icons" style="vertical-align: middle">bookmark_border</i> Bookmarked
+            </button>
+            <button id="menu_history" class="mat-menu-item" mat-menu-item [routerLink]="['/history']">
+              <i class="material-icons" style="vertical-align: middle">history</i> History
+            </button>
+          </mat-menu>
+          <button class="mat-button" mat-flat-button color="primary" [routerLink]="['/login']" [style.display]="verified ? 'none' :'initial'" >Login</button> &nbsp;
+          <button class="mat-button" mat-stroked-button [routerLink]="['/register']" [style.display]="verified ? 'none' :'initial'" >Sign up</button>
+          <button class="mat-button-logout" (click)="logout()" mat-button [style.display]="verified ? 'initial' :'none'">Logout</button>
+      </span>
+  </mat-toolbar-row>
+
+  <!-- <mat-toolbar-row class="desktop-menu">
+    <span> </span>
+    <span class="example-spacer"></span>
+    <span class="menu-section">
+        <i class="material-icons" style="vertical-align: middle">check_circle_outline</i> Recomended |
+        <i class="material-icons" style="vertical-align: middle">bookmark_border</i> Bookmarked |
+        Logout
+    </span>
+    <mat-icon class="example-icon" style="vertical-align: middle" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="bg-primary-3 mobile-menu">
+    <span> </span>
+    <span class="example-spacer"></span>
+    <span>
+        <button class="mat-button"  mat-stroked-button [matMenuTriggerFor]="menu">
+            <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button class="mat-menu-item-india" mat-menu-item><i class="material-icons" style="vertical-align: middle">check_circle_outline</i> Recomended</button>
+          <button class="mat-menu-item-spain" mat-menu-item><i class="material-icons" style="vertical-align: middle">bookmark_border</i> Bookmarked</button>
+          <button class="mat-menu-item-spain" mat-menu-item><i class="material-icons" style="vertical-align: middle">close</i> Logout</button>
+        </mat-menu>
+    </span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+  </mat-toolbar-row> -->
+</mat-toolbar>
